@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">JobLogic</string>
+    <string name="title_label">Title</string>
+    <string name="number_label">Number</string>
+    <string name="buyer_label">Buyer</string>
+    <string name="contact_label">Contact</string>
+    <string name="call_label">Call List</string>
+    <string name="buy_label">Buy List</string>
+    <string name="sell_label">Sell List</string>
+    <string name="name_label">Name : </string>
+    <string name="price_label">Price : </string>
+    <string name="quantity_label">Quantity : </string>
+</resources>
