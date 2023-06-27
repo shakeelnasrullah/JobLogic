@@ -27,9 +27,6 @@ class HomeViewModel @Inject constructor(
             is HomeEvents.AddSellList -> {
                 addSellListIntoRoomDB()
             }
-            is HomeEvents.GoToBuyScreen -> {}
-            is HomeEvents.GoToCallScreen -> {}
-            is HomeEvents.GoToSellScreen -> {}
         }
     }
 
