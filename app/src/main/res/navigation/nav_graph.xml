@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeScreen">
+
+    <activity
+        android:id="@+id/homeScreen"
+        android:name="com.sos.joblogic.presentation.home.HomeScreen"
+        android:label="HomeScreen" />
+    <activity
+        android:id="@+id/buyScreen"
+        android:name="com.sos.joblogic.presentation.buy.BuyScreen"
+        android:label="BuyScreen" />
+    <activity
+        android:id="@+id/callScreen"
+        android:name="com.sos.joblogic.presentation.call.CallScreen"
+        android:label="CallScreen" />
+    <activity
+        android:id="@+id/sellScreen"
+        android:name="com.sos.joblogic.presentation.sell.SellScreen"
+        android:label="SellScreen" />
+</navigation>
