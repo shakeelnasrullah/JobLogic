@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -55,7 +56,7 @@ fun HomeScreen(modifier: Modifier = Modifier, navController: NavController, view
 @Composable
 fun GreetingPreview() {
     JobLogicTheme {
-        //ThreeButtonsScreen()
+
     }
 }
 
@@ -86,7 +87,7 @@ fun HomeContents(
                     .padding(16.dp)
                     .height(56.dp),
                 shape = RoundedCornerShape(8.dp),
-                colors = ButtonDefaults.buttonColors(Color(0xFF6200EE)),
+                colors = ButtonDefaults.buttonColors(colorResource(id = R.color.purple_500))
             ) {
                 Text(text = "Call List")
             }
@@ -100,7 +101,7 @@ fun HomeContents(
                     .padding(16.dp)
                     .height(56.dp),
                 shape = RoundedCornerShape(8.dp),
-                colors = ButtonDefaults.buttonColors(Color(0xFF6200EE)),
+                colors = ButtonDefaults.buttonColors(colorResource(id = R.color.purple_500))
             ) {
                 Text(text = "Buy List")
             }
@@ -114,7 +115,7 @@ fun HomeContents(
                     .padding(16.dp)
                     .height(56.dp),
                 shape = RoundedCornerShape(8.dp),
-                colors = ButtonDefaults.buttonColors(Color(0xFF6200EE)),
+                colors = ButtonDefaults.buttonColors(colorResource(id = R.color.purple_500))
             ) {
                 Text(text = "Sell List")
             }
@@ -130,8 +131,9 @@ fun HomeContents(
         }
 
         HomeUIState.SuccessState -> {
-            Toast.makeText(LocalContext.current, "Sell List added Successfully", Toast.LENGTH_SHORT)
-                .show()
+            // show toast or perform any action
+            /*Toast.makeText(LocalContext.current, "Sell List added Successfully", Toast.LENGTH_SHORT)
+                .show()*/
         }
 
         else -> {}

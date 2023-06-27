@@ -3,6 +3,7 @@
 package com.sos.joblogic.presentation.sell
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -58,8 +59,7 @@ fun SellScreen(
                 .fillMaxSize()
                 .padding(innerPadding),
             uiState = uiState,
-            viewModel = viewModel,
-            innerPadding
+            viewModel = viewModel
         )
     }
 
@@ -73,7 +73,7 @@ fun GreetingPreview() {
     list.add(BuyListItem(2, "Shakeel", 12000, 12, 1))
     list.add(BuyListItem(3, "Shakeel", 12000, 12, 1))
     JobLogicTheme {
-        ShowList(modifier = Modifier.fillMaxSize(), list)
+        ShowSellList(modifier = Modifier.fillMaxSize(), list)
     }
 }
 
@@ -83,8 +83,7 @@ fun GreetingPreview() {
 fun ShowContentOfScreen(
     modifier: Modifier = Modifier,
     uiState: SellUIState,
-    viewModel: SellViewModel,
-    innerPadding: PaddingValues
+    viewModel: SellViewModel
 ) {
 
 
@@ -110,7 +109,7 @@ fun ShowContentOfScreen(
         }
 
         is SellUIState.SuccessState -> {
-            ShowList(
+            ShowSellList(
                 modifier,
                 itemList = (uiState as SellUIState.SuccessState).data
             )
@@ -120,29 +119,25 @@ fun ShowContentOfScreen(
 }
 
 @Composable
-fun ShowList(
+fun ShowSellList(
     modifier: Modifier = Modifier,
     itemList: List<BuyListItem>
 ) {
 
 
     LazyColumn(
-        modifier = Modifier
-            .fillMaxSize(),
-        contentPadding = PaddingValues(2.dp)
-        //verticalArrangement = Arrangement.spacedBy(4.dp),
+        modifier = modifier
     ) {
         items(itemList) { buyItem ->
             Card(
-                modifier = modifier
-                    .fillMaxWidth()
-                    .padding(8.dp),
+                modifier = Modifier
+                    .fillMaxWidth().padding(8.dp),
                 elevation = 4.dp,
                 shape = RoundedCornerShape(8.dp),
-                backgroundColor = colorResource(id = R.color.purple_700)
+                backgroundColor = colorResource(id = R.color.purple_500)
 
             ) {
-                Column(Modifier.padding(8.dp)) {
+                Column(Modifier.padding(18.dp)) {
                     Text(
                         modifier = Modifier.padding(4.dp),
                         text = "Name: ${buyItem.name}",

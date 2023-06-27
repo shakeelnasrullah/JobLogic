@@ -116,21 +116,21 @@ fun ShowCallList(
 
 
     LazyColumn(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize(),
         contentPadding = PaddingValues(2.dp)
     ) {
         items(itemList) { buyItem ->
             Card(
-                modifier = modifier
+                modifier = Modifier
                     .fillMaxWidth()
                     .padding(8.dp),
                 elevation = 4.dp,
                 shape = RoundedCornerShape(8.dp),
-                backgroundColor = colorResource(id = R.color.purple_700)
+                backgroundColor = colorResource(id = R.color.purple_500)
 
             ) {
-                Column(Modifier.padding(8.dp)) {
+                Column(Modifier.padding(18.dp)) {
                     Text(
                         modifier = Modifier.padding(4.dp),
                         text = "Name: ${buyItem.name}",
